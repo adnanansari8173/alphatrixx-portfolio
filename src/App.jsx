@@ -11,7 +11,7 @@ function App() {
     <div>
       {/* Navigation */}
       <nav className="bg-blue-600 p-4 flex text-xl justify-between">
-        <ul className="text-white py-2">
+        <ul className="text-white px-2">
           <li className="">
             <a href="">
               Adnan{" "}
