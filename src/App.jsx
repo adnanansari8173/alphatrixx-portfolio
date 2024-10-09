@@ -10,8 +10,16 @@ function App() {
   return (
     <div>
       {/* Navigation */}
-      <nav className="bg-blue-600 p-4">
-        <ul className="flex justify-center space-x-6">
+      <nav className="bg-blue-600 p-4 flex text-xl justify-between">
+        <ul className="text-white py-2">
+          <li className="">
+            <a href="">
+              Adnan{" "}
+              <span className="text-blue-400 hover:text-white">Services</span>
+            </a>
+          </li>
+        </ul>
+        <ul className="flex justify-between text-center px-2 gap-2">
           <li>
             <Link to="/" className="text-white hover:text-gray-300">
               Home
@@ -36,7 +44,7 @@ function App() {
       </nav>
 
       {/* Routes */}
-      <div className="p-8">
+      <div className="">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
