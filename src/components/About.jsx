@@ -1,5 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import integrity from "../assets/integrity.webp";
+import customer from "../assets/customer.webp";
+import respect from "../assets/respect.webp";
+import account from "../assets/account.webp";
 
 const About = () => {
   const cardData = [
@@ -7,28 +11,25 @@ const About = () => {
       title: "Integrity & Honesty",
       description:
         "Honesty is not just a virtue; it’s a fundamental principle that guides every aspect of our operations.",
-      image: "http://alphatrixx.com/wp-content/uploads/2023/09/960x0.webp",
+      image: integrity, // Use a colon here instead of an equals sign
     },
     {
       title: "Customer-Centricity",
       description:
         "We place you at the heart of everything we do, ensuring a seamless and delightful experience at every touchpoint.",
-      image:
-        "http://alphatrixx.com/wp-content/uploads/2023/09/customer-centric.jpg",
+      image: customer,
     },
     {
       title: "Respect & Diversity",
       description:
         "We celebrate diverse perspectives and cultures, making us stronger and more impactful in the global community.",
-      image:
-        "http://alphatrixx.com/wp-content/uploads/2023/09/360_F_85504996_G3W1AqbJPBHzZOdYjAfrH5r92b9NtsAz.jpg",
+      image: respect,
     },
     {
       title: "Accountability",
       description:
         "Accountability is key to achieving and maintaining the highest standards of quality.",
-      image:
-        "http://alphatrixx.com/wp-content/uploads/2023/09/accountability-leadership.jpg",
+      image: account,
     },
   ];
 

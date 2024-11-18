@@ -95,7 +95,7 @@ const Hero = () => {
 
         {/* Call-to-Action Button with Hover Effect */}
         <motion.a
-          href="#services"
+          href="#it-services"
           className="mt-6 inline-block bg-white text-blue-600 px-8 py-4 font-semibold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
           whileHover={{ scale: 1.1 }}
         >

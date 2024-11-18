@@ -13,7 +13,7 @@ const MobileAppDevelopment = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#ECFCCB",
+        backgroundColor: "#e5e7eb",
         padding: "40px",
         display: "flex",
         justifyContent: "center",

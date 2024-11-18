@@ -13,6 +13,7 @@ import DigitalMarketing from "./pages/DigitalMarketing";
 import MobileAppDevelopment from "./pages/MobileAppDevelopment";
 import RecruitmentServices from "./pages/RecruitmentServices";
 import HrServices from "./pages/HrServices";
+import Services from "./components/Services";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/mobile-development" element={<MobileAppDevelopment />} />
         <Route path="/recruitment-services" element={<RecruitmentServices />} />
         <Route path="/hr-services" element={<HrServices />} />
+        <Route path="/it-services" element={<Services />} />
       </Routes>
       <Footer />
       <Toaster />

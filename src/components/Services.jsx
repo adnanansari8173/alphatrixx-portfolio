@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 const Services = () => {
   const navigate = useNavigate();
   return (
-    <div id="services" className="py-20 bg-gray-100">
+    <div id="it-services" className="py-20 bg-gray-100">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">Our Services</h2>
         <p className="text-lg mt-4">

@@ -80,32 +80,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Support Section */}
-        <div>
-          <h2 className="font-bold text-xl mb-4 text-fuchsia-400">
-            What We Support
-          </h2>
-          <ul className="space-y-2">
-            {[
-              "Documentation",
-              "Product",
-              "Reporting Issue",
-              "Terms & Conditions",
-              "Privacy Policy",
-            ].map((support, index) => (
-              <motion.li
-                key={support}
-                className="hover:text-fuchsia-600 transition duration-300 cursor-pointer"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 + 0.1 }}
-              >
-                {support}
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-
         {/* About Us Section */}
         <div>
           <h2 className="font-bold text-xl mb-4 text-fuchsia-400">About Us</h2>
@@ -138,6 +112,21 @@ const Footer = () => {
               </motion.li>
             ))}
           </ul>
+        </div>
+        {/* contact section  */}
+        <div>
+          <h2 className="font-bold text-xl mb-4 text-fuchsia-400">
+            Contact Us
+          </h2>
+          <p>Mob.</p>
+          <p>+91 8173940380</p>
+          <p>EMail</p>
+          <p>info@alphatrixx.com</p>
+          <p>Address</p>
+          <p>
+            9th Floor, Tower-I, Jeevan Bharati Building, Connaught Place, New
+            Delhi - 110 001
+          </p>
         </div>
       </div>
 

@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import logo from "../assets/logo.jpeg"; // Ensure the logo file path is correct
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,24 +53,36 @@ const Navbar = () => {
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Typography
-          variant="h6"
-          component="div"
+        {/* Logo */}
+        <Box
           sx={{
-            fontWeight: "bold",
-            fontFamily: "Roboto, sans-serif",
-            color: "#1E3A8A",
-            letterSpacing: "1px",
+            display: "flex",
+            alignItems: "center",
+            gap: 2,
+            cursor: "pointer",
           }}
+          onClick={() => navigate("/")} // Navigates to Home when the logo is clicked
         >
-          <div className="w-10 h-10 ">
-            <img
-              className=""
-              src="http://alphatrixx.com/wp-content/uploads/2024/07/WhatsApp-Image-2023-09-19-at-14.00.00-300x300.jpg"
-              alt=""
-            />
-          </div>
-        </Typography>
+          <img
+            src={logo}
+            alt="Logo"
+            style={{
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              fontFamily: "Roboto, sans-serif",
+              color: "#1E3A8A",
+              letterSpacing: "1px",
+            }}
+          ></Typography>
+        </Box>
 
         {/* Hamburger Menu for Mobile */}
         <IconButton
@@ -122,6 +135,12 @@ const Navbar = () => {
                   >
                     HR Services
                   </MenuItem>
+                  <MenuItem
+                    onClick={() => navigate("/it-services")}
+                    onClose={handleMenuClose}
+                  >
+                    IT Services
+                  </MenuItem>
                 </Menu>
               </Button>
             ) : (
@@ -146,6 +165,7 @@ const Navbar = () => {
         </Box>
       </Toolbar>
 
+      {/* Drawer for Mobile Menu */}
       {/* Drawer for Mobile Menu */}
       <Drawer
         anchor="right"
@@ -174,47 +194,75 @@ const Navbar = () => {
             <CloseIcon />
           </IconButton>
 
-          {links.map((link) => (
-            <Button
-              key={link}
-              onClick={
-                link === "Services"
-                  ? handleMenuOpen
-                  : () => navigate(`/${link.toLowerCase()}`)
-              }
-              sx={{
-                color: "gray",
-                margin: 1,
-                transition: "color 0.3s ease-in-out, transform 0.3s ease",
-                "&:hover": {
-                  color: "#3B82F6",
-                  transform: "scale(1.05)", // Smooth hover effect
-                },
-                fontFamily: "Arial, sans-serif", // Change font family here
-                fontWeight: "500",
-              }}
-            >
-              {link}
-            </Button>
-          ))}
-
-          {/* HR Services link in mobile drawer */}
-          <Button
-            onClick={() => navigate("/hr-services")}
-            sx={{
-              color: "gray",
-              margin: 1,
-              transition: "color 0.3s ease-in-out, transform 0.3s ease",
-              "&:hover": {
-                color: "#3B82F6",
-                transform: "scale(1.05)", // Smooth hover effect
-              },
-              fontFamily: "Arial, sans-serif", // Change font family here
-              fontWeight: "500",
-            }}
-          >
-            HR Services
-          </Button>
+          {links.map((link) =>
+            link === "Services" ? (
+              <Box key={link}>
+                <Button
+                  sx={{
+                    color: "gray",
+                    margin: 1,
+                    transition: "color 0.3s ease-in-out, transform 0.3s ease",
+                    "&:hover": {
+                      color: "#3B82F6",
+                      transform: "scale(1.05)",
+                    },
+                    fontFamily: "Arial, sans-serif",
+                    fontWeight: "500",
+                  }}
+                  href={`/#${link.toLowerCase()}`} // Main Services Link
+                >
+                  {link}
+                </Button>
+                {/* Sub-links for Services */}
+                <Box sx={{ marginLeft: 2 }}>
+                  <Button
+                    onClick={() => navigate("/hr-services")}
+                    sx={{
+                      color: "gray",
+                      margin: 1,
+                      textAlign: "left",
+                      transition: "color 0.3s ease-in-out",
+                      "&:hover": { color: "#3B82F6" },
+                      fontFamily: "Arial, sans-serif",
+                    }}
+                  >
+                    HR Services
+                  </Button>
+                  <Button
+                    onClick={() => navigate("/it-services")}
+                    sx={{
+                      color: "gray",
+                      margin: 1,
+                      textAlign: "left",
+                      transition: "color 0.3s ease-in-out",
+                      "&:hover": { color: "#3B82F6" },
+                      fontFamily: "Arial, sans-serif",
+                    }}
+                  >
+                    IT Services
+                  </Button>
+                </Box>
+              </Box>
+            ) : (
+              <Button
+                key={link}
+                href={`/#${link.toLowerCase()}`}
+                sx={{
+                  color: "gray",
+                  margin: 1,
+                  transition: "color 0.3s ease-in-out, transform 0.3s ease",
+                  "&:hover": {
+                    color: "#3B82F6",
+                    transform: "scale(1.05)",
+                  },
+                  fontFamily: "Arial, sans-serif",
+                  fontWeight: "500",
+                }}
+              >
+                {link}
+              </Button>
+            )
+          )}
         </Box>
       </Drawer>
     </AppBar>

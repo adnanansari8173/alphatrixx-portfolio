@@ -16,7 +16,7 @@ const ItConsulting = () => {
   return (
     <Box
       sx={{
-        background: "linear-gradient(135deg, #ECFCCB, #A7F3D0)",
+        background: "#e5e7eb",
         padding: "40px",
         display: "flex",
         justifyContent: "center",
