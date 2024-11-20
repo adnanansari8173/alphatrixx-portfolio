@@ -66,6 +66,11 @@ const Footer = () => {
                 name: "RecruitmentServices",
                 link: "recruitment-services",
               },
+              {
+                id: "HrServices",
+                name: "HrServices",
+                link: "hr-services",
+              },
             ].map((service, index) => (
               <motion.li
                 key={service.name}
@@ -118,15 +123,41 @@ const Footer = () => {
           <h2 className="font-bold text-xl mb-4 text-fuchsia-400">
             Contact Us
           </h2>
-          <p>Mob.</p>
-          <p>+91 8173940380</p>
-          <p>EMail</p>
-          <p>info@alphatrixx.com</p>
-          <p>Address</p>
-          <p>
-            9th Floor, Tower-I, Jeevan Bharati Building, Connaught Place, New
-            Delhi - 110 001
-          </p>
+          <ul className="space-y-4">
+            {[
+              { label: "Mobile", value: "+91 8173940380", icon: "faPhone" },
+              {
+                label: "Email",
+                value: "info@alphatrixx.com",
+                icon: "faEnvelope",
+              },
+              {
+                label: "Address",
+                value:
+                  "L2L building B-8, Sector 2, Noida, Uttar Pradesh, India - 201301",
+                icon: "faMapMarkerAlt",
+              },
+            ].map((contact, index) => (
+              <motion.li
+                key={contact.label}
+                className="flex items-start space-x-4 p-2 bg-gray-800 rounded-lg shadow-md hover:bg-fuchsia-600 hover:text-white transition duration-300"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+                <FontAwesomeIcon
+                  icon={
+                    require(`@fortawesome/free-solid-svg-icons`)[contact.icon]
+                  }
+                  className="text-fuchsia-400 text-lg mt-1"
+                />
+                <div>
+                  <p className="font-semibold">{contact.label}:</p>
+                  <p className="text-sm">{contact.value}</p>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
         </div>
       </div>
 
